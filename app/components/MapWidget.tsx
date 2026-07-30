@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import "MapWidget.css";
+import "./MapWidget.css";
 
 export default function MapWidget() {
   const ref = useRef<HTMLDivElement>(null);
