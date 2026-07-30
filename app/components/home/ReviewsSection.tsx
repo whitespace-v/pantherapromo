@@ -71,7 +71,9 @@ export default function ReviewsSection() {
           }}
         >
           {/* 2gis */}
-          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <div
+            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
             <img src="/images/logos/2gis.svg" alt="" width={25} height={25} />
           </div>
           <h3 style={{ margin: 0 }}>{SITE.rating.count} оценок</h3>
@@ -86,8 +88,10 @@ export default function ReviewsSection() {
           {/* END 2gis  */}
 
           {/* yamaps */}
-          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-            <img src="/images/logos/ya.png" alt="" width={20} height={20} />
+          <div
+            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            <img src="/images/logos/ya.webp" alt="" width={20} height={20} />
           </div>
           <h3 style={{ margin: 0 }}>14 оценок</h3>
           <div
@@ -101,8 +105,10 @@ export default function ReviewsSection() {
           {/* END yamaps  */}
 
           {/* gmaps */}
-          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-            <img src="images/logos/google.png" alt="" width={20} height={20} />
+          <div
+            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            <img src="images/logos/google.webp" alt="" width={20} height={20} />
           </div>
           <h3 style={{ margin: 0 }}>7 оценок</h3>
           <div
@@ -116,8 +122,10 @@ export default function ReviewsSection() {
           {/* END gmaps  */}
 
           {/* vl.ru */}
-          <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-            <img src="/images/logos/vl.png" alt="" width={40} height={20} />
+          <div
+            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            <img src="/images/logos/vl.webp" alt="" width={40} height={20} />
           </div>
           <h3 style={{ margin: 0 }}>4 оценки</h3>
           <div
@@ -131,10 +139,15 @@ export default function ReviewsSection() {
           {/* END vl.ru  */}
         </div>
         <div className="reviews-grid" style={{ marginTop: 18 }}>
-          {REVIEWS.map(r => (
+          {REVIEWS.map((r) => (
             <article className="review-card" key={r.name}>
               <div className="review-head">
-                <img className="review-avatar" src={r.avatar} alt={r.name} loading="lazy" />
+                <img
+                  className="review-avatar"
+                  src={r.avatar}
+                  alt={r.name}
+                  loading="lazy"
+                />
                 <div className="review-meta">
                   <div className="review-name-row">
                     <span className="review-name">{r.name}</span>
@@ -143,10 +156,18 @@ export default function ReviewsSection() {
                   <div className="review-date">{r.date}</div>
                 </div>
               </div>
-              <div className="review-photo" style={{ backgroundImage: `url('${r.photo}')` }} />
+              <div
+                className="review-photo"
+                style={{ backgroundImage: `url('${r.photo}')` }}
+              />
               <Stars n={r.stars} />
               <p className="review-text">{r.text}</p>
-              <a href={SITE.socials.dgis} className="review-more" target="_blank" rel="noopener noreferrer">
+              <a
+                href={SITE.socials.dgis}
+                className="review-more"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Читать целиком
               </a>
               <div className="review-bottom">

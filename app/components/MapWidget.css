@@ -1,0 +1,6 @@
+.map-placeholder {
+  min-height: 400px;
+  width: 100%;
+  background: #1a1a1a; /* подгони под тёмную тему сайта */
+  border-radius: inherit;
+}
