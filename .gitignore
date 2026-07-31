@@ -1,0 +1,46 @@
+# зависимости
+/node_modules
+.pnp
+.pnp.*
+
+# сборка Next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+
+# продакшн
+/dist
+
+# отладка
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# окружение (секреты не коммитим!)
+.env
+.env*.local
+.env.production
+
+# логи
+*.log
+
+# кеши и тесты
+/coverage
+.turbo
+.vercel
+
+# редакторы / ОС
+.DS_Store
+*.pem
+.idea/
+.vscode/*
+!.vscode/extensions.json
+Thumbs.db
+
+# Docker (по желанию — если не хочешь игнорить, убери)
+# docker-compose.override.yml
+
+# TypeScript
+*.tsbuildinfo
