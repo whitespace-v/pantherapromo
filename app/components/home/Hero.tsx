@@ -50,7 +50,7 @@ export default function Hero() {
           <div className="hero-card glass interactive">
             <h2>Мы в сети!</h2>
             <div className="contact-stack">
-              {NETWORK_LINKS.map(link => (
+               {NETWORK_LINKS.map(link => (
                 
                   key={link.label}
                   href={link.href}
