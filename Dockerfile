@@ -20,11 +20,10 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 
-# непривилегированный пользователь
-RUN addgroup --system --gid 1001 nodejs \
-    && adduser --system --uid 1001 nextjs
+# непривилегированный пользователь (Debian-синтаксис)
+RUN groupadd --system --gid 1001 nodejs \
+    && useradd --system --uid 1001 --gid nodejs nextjs
 
-# standalone-сборка тащит только нужное
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
@@ -32,5 +31,4 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
 EXPOSE 3000
 
-# standalone кладёт минимальный сервер в server.js
 CMD ["bun", "server.js"]
