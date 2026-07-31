@@ -21,11 +21,14 @@ export default function Hero() {
 
       <div className="container hero-grid">
         <div>
-          <p className="eyebrow">Техническое обслуживание и ремонт автотранспорта</p>
+          <p className="eyebrow">
+            Техническое обслуживание и ремонт автотранспорта
+          </p>
           <h1 className="hero-title">Чиним честно и с гарантией</h1>
           <p className="hero-text">
-            Заранее согласовываем объём работ, подходим к каждой машине индивидуально и отвечаем за результат. Гарантия
-            на наши услуги до 4 лет.
+            Заранее согласовываем объём работ, подходим к каждой машине
+            индивидуально и отвечаем за результат. Гарантия на наши услуги до 4
+            лет.
           </p>
           <div className="hero-actions">
             <a className="btn btn-primary interactive" href="#lead-form">
@@ -36,7 +39,9 @@ export default function Hero() {
             </a>
           </div>
           <ul className="hero-points">
-            <li>Мы не навязываем лишние работы и не выдумываем неисправности.</li>
+            <li>
+              Мы не навязываем лишние работы и не выдумываем неисправности.
+            </li>
             <li>Устраняем причины, а не симптомы</li>
             <li>Выполняем только согласованные работы с прозрачными ценами.</li>
             <li>Диагностика бесплатно если не нашли причину.</li>
@@ -50,8 +55,8 @@ export default function Hero() {
           <div className="hero-card glass interactive">
             <h2>Мы в сети!</h2>
             <div className="contact-stack">
-               {NETWORK_LINKS.map(link => (
-                
+              {NETWORK_LINKS.map((link) => (
+                <a
                   key={link.label}
                   href={link.href}
                   className="contact-row interactive"
@@ -64,7 +69,8 @@ export default function Hero() {
               ))}
             </div>
             <p className="network-note">
-              * Instagram принадлежит компании Meta, признанной экстремистской организацией в РФ.
+              * Instagram принадлежит компании Meta, признанной экстремистской
+              организацией в РФ.
             </p>
           </div>
 
