@@ -1,11 +1,24 @@
+import Image from "next/image";
 import Reveal from "../Reveal";
 import { NETWORK_LINKS } from "../../lib/site";
 
-const HERO_BG = "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.96)), url('/images/out.jpg')";
-
 export default function Hero() {
   return (
-    <section className="hero" id="hero" style={{ backgroundImage: HERO_BG }}>
+    <section className="hero" id="hero">
+      {/* Фоновое изображение — LCP, грузим приоритетно */}
+      <Image
+        src="/images/out.jpg"
+        alt=""
+        fill
+        priority
+        fetchPriority="high"
+        sizes="100vw"
+        quality={70}
+        className="hero-bg"
+      />
+      {/* Затемняющий градиент поверх картинки */}
+      <div className="hero-overlay" aria-hidden="true" />
+
       <div className="container hero-grid">
         <div>
           <p className="eyebrow">Техническое обслуживание и ремонт автотранспорта</p>
@@ -38,7 +51,7 @@ export default function Hero() {
             <h2>Мы в сети!</h2>
             <div className="contact-stack">
               {NETWORK_LINKS.map(link => (
-                <a
+                
                   key={link.label}
                   href={link.href}
                   className="contact-row interactive"

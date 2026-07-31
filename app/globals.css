@@ -30,8 +30,16 @@ body {
     "Segoe UI",
     sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.04), transparent 24%),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(255, 255, 255, 0.04),
+      transparent 24%
+    ),
     linear-gradient(180deg, #040404 0%, #0a0a0a 45%, #070707 100%);
   color: var(--text);
   line-height: 1.6;
@@ -60,10 +68,18 @@ button {
   padding: 96px 0;
 }
 .section-dark {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
 }
 .section-accent {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
 }
 .eyebrow {
   display: inline-flex;
@@ -282,7 +298,11 @@ p {
 .map-card,
 .lead-form,
 .gallery-card {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(255, 255, 255, 0.03)
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -366,7 +386,11 @@ p {
     box-shadow var(--transition);
 }
 .chip.active {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.07));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.07)
+  );
   border-color: rgba(255, 255, 255, 0.32);
   box-shadow: 0 14px 30px rgba(255, 255, 255, 0.08);
 }
@@ -479,7 +503,11 @@ p {
   /* padding: 24px; */
 }
 iframe {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(255, 255, 255, 0.03)
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -493,7 +521,13 @@ iframe {
   place-items: center;
   text-align: center;
   padding: 30px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)), rgba(255, 255, 255, 0.03);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(255, 255, 255, 0.03);
 }
 .map-placeholder span {
   color: #e1e1e1;
@@ -565,7 +599,11 @@ iframe {
   inset: auto -20% -60% auto;
   width: 140px;
   height: 140px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12),
+    transparent 70%
+  );
   opacity: 0;
   transition:
     opacity var(--transition),
@@ -904,7 +942,11 @@ iframe {
   position: relative;
   overflow: hidden;
   padding: 24px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(255, 255, 255, 0.03)
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -985,4 +1027,32 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+/* Контейнер должен позиционировать слои и обрезать картинку */
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* ВАЖНО: убери отсюда старый background-image, если он был задан в CSS */
+}
+
+/* Фоновое изображение (next/image с fill) */
+.hero-bg {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Затемняющий градиент поверх картинки */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.96));
+  pointer-events: none;
+}
+
+/* Контент должен быть выше картинки и градиента */
+.hero-grid {
+  position: relative;
+  z-index: 2;
 }
