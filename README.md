@@ -12,8 +12,8 @@ npm run dev      # http://localhost:3000
 Сборка и продакшн:
 
 ```bash
-npm run build
-npm start
+docker compose up -d --build
+docker compose logs -f web   # посмотреть логи
 ```
 
 ```
